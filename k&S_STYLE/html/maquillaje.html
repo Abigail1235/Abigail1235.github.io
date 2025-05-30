@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCS STL - Elegancia que inspira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        @keyframes cambiarColor {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header-top {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .logo-img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 2.5rem;
+            font-size: large;
+            background: linear-gradient(270deg, #0a0a0a);
+            background-size: 1000% 1000%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: cambiarColor 8s ease infinite;
+        }
+
+        .brand-slogan {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin: 0 20px;
+            background: linear-gradient(270deg, #354d31, #3c7746, #4fb877);
+            background-size: 1000% 1000%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: cambiarColor 8s ease infinite;
+        }
+
+        .search-bar-minimalist {
+            border-bottom: 2px solid #ccc;
+            margin: 20px auto;
+            max-width: 300px;
+            width: 100%;
+            display: flex;
+        }
+
+        .search-input {
+            border: none;
+            padding: 8px 10px;
+            font-size: 1.1em;
+            outline: none;
+            flex-grow: 1;
+        }
+
+        .search-button {
+            background: none;
+            border: none;
+            padding: 8px 10px;
+            cursor: pointer;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .search-button:hover {
+            color: #007bff;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1d5f38;
+            padding: 15px 0;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: linear-gradient(270deg, #f5f4f4, #bbbbba);
+            background-size: 1000% 1000%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: cambiarColor 8s ease infinite;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .product-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(270deg, #1e683d, #a8a8a8, #f5f5f7);
+            background-size: 1000% 1000%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: cambiarColor 8s ease infinite;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #eee;
+        }
+
+        .social-icon {
+            margin: 0 15px;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        #search-result {
+            text-align: center;
+            margin: 20px;
+            font-size: 1.2rem;
+            color: #999;
+        }
+
+        @media (max-width: 600px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .logo-img {
+                position: static;
+                margin: 0 auto 10px;
+                display: block;
+            }
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            border-top: 1px solid #eee;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .add-to-cart{
+    background-color: #eeecec;
+            font-family: Arial, Helvetica, sans-serif;          
+              padding: 10px 20px;
+            border: #e9e6e6;
+            border-radius: 5px;
+            font-size: large;
+            cursor:pointer;
+            color: #050505;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(1px); 
+}
+.ver {
+         background-color: #eeecec;
+            font-family: Arial, Helvetica, sans-serif;          
+              padding: 10px 20px;
+            border: #e9e6e6;
+            border-radius: 5px;
+            font-size: large;
+            cursor:pointer;
+            color: #050505;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(1px);       
+}
+   #boton-retroceso {
+  
+  border-radius: 2px solid #0b290a;
+  color: #141313;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  align-content: end;
+  float: left;
+ border-radius: 30px;
+  font: 1em sans-serif;
+}
+
+#boton-retroceso:hover {
+  background-color: #a6dba8;
+}
+     #boton-retroceso {
+  
+  border-radius: 2px solid #0b290a;
+  color: #141313;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  align-content: end;
+  float: left;
+ border-radius: 30px;
+  font: 1em sans-serif;
+}
+
+#boton-retroceso:hover {
+  background-color: #a6dba8;
+}
+    </style>
+</head>
+<body>
+
+    <!-- LOGO IZQUIERDA + TEXTO CENTRADO -->
+    <div class="header-top">
+        <img src="imagenes\logo.png" class="logo-img" alt="Logo">
+        <h1 class="brand-name" style="font-size: 60px;">K&S STYLE</h1>
+        <p class="brand-slogan" style="font-size: 40px"; >Elegancia que inspira... estilo que trasciende</p>
+
+        <!-- BARRA DE BÚSQUEDA -->
+        <div class="search-bar-minimalist">
+            <input type="text"id="search-input" class="search-input" placeholder="Buscar...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <div class="nav">
+        <a href="index.html" class="nav-item">INICIO</a>
+        <a href="productos.html"class="nav-item">PRODUCTOS</a>
+        <a href="maquillaje.html" class="nav-item">MAQUILLAJE</a>
+        <a href="ropa.html" class="nav-item">ROPA</a>
+        <a href="accesorios.html" class="nav-item">ACCESORIOS</a>
+        <a href="ayuda..html" class="nav-item">AYUDA</a>
+    </div>
+
+    <!-- PRODUCTOS -->
+    <div class="products" id="product-list">
+        <div class="product-card" data-description="lentes de color negro oscuro">
+            <img src="imagenes\brillo.png" width="250" height="200" alt="Lentes">
+            <p>brillo labial de cereza</p>
+            <p class="product-price">$360</p>
+            <button class="add-to-cart" onclick="addToCart('brillo', 360, 'imagenes/brillo.png')">
+                <i class="fas fa-shopping-bag"></i> Agregar al carrito
+            </button>
+        </button>
+        <a href="labial.html" class="ver">ver mas
+        <i class="verm"></i></a>
+        </div>
+            <div class="product-actions">
+                <i class="far fa-heart"></i>
+                <img src="imagenes\paleta.png" width="200" height="200" alt="bolsa">
+                <p> paleta de maquillaje</p>
+            <p class="product-price">$500</p>
+            <button class="add-to-cart" onclick="addToCart('paleta', 500, 'imagenes\\paleta.png')">
+                <i class="fas fa-shopping-bag"></i> Agregar al carrito
+            </button>
+        </button>
+        <a href="paleta.html" class="ver">ver mas
+        <i class="verm"></i></a>
+                
+            </div>
+        
+
+        <div class="product-card" data-description="reloj inteligente">
+            <img src="imagenes\labial.png" width="250" height="200" alt="reloj inteligente">
+            <p> labial tipo gloss</p>
+            <p class="product-price">$290</p>
+            <div class="product-actions">
+                <i class="far fa-heart"></i>
+                <button class="add-to-cart" onclick="addToCart('gloss', 290, 'imagenes\\labial.png')">
+                    <i class="fas fa-shopping-bag"></i> Agregar al carrito
+                </button>
+            </button>
+            <a href="gloss.html" class="ver">ver mas
+            <i class="verm"></i></a>
+                
+            </div>
+        </div>
+        <div class="product-card" data-description="reloj inteligente">
+            <img src="imagenes\sombras.png" width="250" height="200" alt="reloj inteligente">
+            <p> maquillaje para cejas </p>
+            <p class="product-price">$320</p>
+            <div class="product-actions">
+                <i class="far fa-heart"></i>
+                <button class="add-to-cart" onclick="addToCart('polvo', 500, 'imagenes\\sombras.png')">
+                    <i class="fas fa-shopping-bag"></i> Agregar al carrito
+                </button>
+            </button>
+            <a href="cejas.html" class="ver">ver mas
+            <i class="verm"></i></a>
+            </div>
+        </div>
+        <div class="product-card" data-description="reloj inteligente">
+            <img src="imagenes\polvo.png" width="250" height="200" alt="reloj inteligente">
+            <p> polvo translucido</p>
+            <p class="product-price">$500</p>
+            <div class="product-actions">
+                <i class="far fa-heart"></i>
+                <button class="add-to-cart" onclick="addToCart('polvo', 500, 'imagenes\\polvo.png')">
+                    <i class="fas fa-shopping-bag"></i> Agregar al carrito
+                </button>
+                <a href="lentes.HTML" class="ver">ver mas
+                    <i class="verm"></i></a>
+                    </div>
+              
+            </div>
+        
+            <div class="product-card" data-description="reloj inteligente">
+                <img src="imagenes/base.png" width="250" height="200" alt="reloj inteligente">
+                <p> base de maquillaje  </p>
+                <p class="product-price">$650</p>
+                <div class="product-actions">
+                    <i class="far fa-heart"></i>
+                    <button class="add-to-cart" onclick="addToCart('base de maquilaje ', 650, 'imagenes\\base.png')">
+                        <i class="fas fa-shopping-bag"></i> Agregar al carrito
+                    </button>
+                </button>
+                <a href="base.html" class="ver">ver mas
+                <i class="verm"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+
+    <!-- Resultado búsqueda -->
+    <div id="search-result"></div>
+    
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social">
+            <a href="https://www.facebook.com/share/18e5FKexXc/?mibextid=wwXIfr" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/k_s_style.oficial?igsh=MXI2NnVna2t2bmVkeA%3D%3D&utm_source=qr" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <button id="boton-retroceso" onclick="history.back()">Volver atrás</button>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.querySelector('.search-button');
+        const products = document.querySelectorAll('.product-card');
+        const resultMessage = document.getElementById('search-result');
+
+        function buscarProducto() {
+            const termino = searchInput.value.toLowerCase().trim();
+            let encontrado = false;
+
+            products.forEach(producto => {
+                const descripcion = producto.getAttribute('data-description').toLowerCase();
+                const nombre = producto.querySelector('p').textContent.toLowerCase();
+
+                if (descripcion.includes(termino) || nombre.includes(termino)) {
+                    producto.style.display = 'flex';
+                    encontrado = true;
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+
+            resultMessage.textContent = encontrado ? '' : 'Lo sentimos, no tenemos este producto.';
+
+             if (termino === '') {
+            products.forEach(producto => {
+                producto.style.display = 'flex';
+            });
+            resultMessage.textContent = '';
+        }
+        }
+
+        searchButton.addEventListener('click', buscarProducto);
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                buscarProducto();
+            }
+        });
+    </script>
+ <script>
+        // Función para agregar productos al carrito
+        function addToCart(name, price, image) {
+            // Obtener el carrito actual de localStorage o crear uno nuevo
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Agregar el nuevo producto
+            cart.push({
+                name: name,
+                price: price,
+                image: image
+            });
+            
+            // Guardar en localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Redirigir a la página del carrito
+            window.location.href = 'carrito.html';
+        }
+    
+        // Función de búsqueda corregida
+        function buscarProducto() {
+            const termino = searchInput.value.toLowerCase();
+            let encontrado = false;
+    
+            products.forEach(producto => {
+                const descripcion = producto.getAttribute('data-description').toLowerCase();
+                if (descripcion.includes(termino)) {
+                    producto.style.display = 'block';
+                    encontrado = true;
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+    
+            resultMessage.textContent = encontrado ? '' : 'Lo sentimos, no tenemos este producto.';
+        }
+    </script>
+
+</body>
+</html>
