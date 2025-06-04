@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegante Minimalista</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Barra de navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100px;
+            height: 150%;
+            padding: 80px 0;
+            border-bottom: 1px solid #123a1e; /* no se de donde salio esa linea*/
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+            text-decoration: none;
+            opacity: 0; /* Inicialmente invisible */
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 40px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #12461d;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2e7d32;
+        }
+        
+        /* Hero section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #666666;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1b5e20;
+        }
+        
+        /* Sección de características */
+        .features {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 32px;
+            font-weight: 300;
+            color: #ffffff;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .iconos {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #011a03;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #000000;
+        }
+        
+        /* Pie de página */
+        footer {
+            background-color: #000000;
+            color: rgb(19, 18, 18);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #2e7d32;
+        }
+        
+        .copyright {
+            color: #777777;
+            font-size: 14px;
+        }
+        nav{
+                display: flex;
+    justify-content: center;
+    background-color:transparent padding: 15px 0;
+    position:sticky;  /* Se pega cuando llega al borde superior */
+    top: 0;            /* Se activa al llegar al tope */
+    z-index: 1000;
+
+
+        }
+            .nav-item {
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: linear-gradient(270deg, #042e08, #bbbbba);
+            background-size: 1000% 1000%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: cambiarColor 8s ease infinite;
+        }
+body section h1{
+     animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+
+}
+body section p{
+    overflow: hidden; /* Oculta el texto hasta que se muestre */
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+
+}
+
+        
+      body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a8a8a8; /* Un color de fondo claro */
+    color: #ffffff; /* Color de texto principal */
+}
+
+header {
+    background-color: #ddd; /* Un fondo grisáceo para la cabecera */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+    border-radius: 50%; /* Para hacerlo circular */
+    margin-right: 5px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p.slogan {
+    font-style: italic;
+    color: #0f0f0f;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #0b290a;/* boton de ayuda*/
+    padding: 5px 10px;
+    border: 3px solid #277c25;/*borde del boton*/
+    border-radius: 5px;
+}
+
+.descripcion {
+    padding: 20px;
+    text-align: center;
+}
+
+.descripcion .resaltado {
+    font-weight: bold;
+    color: red; /* Resaltar "street style" */
+}
+
+.descripcion .imagenes-descripcion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.descripcion .imagenes-descripcion img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.categorias {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #eee; /* Otro fondo grisáceo */
+}
+
+.categorias .categoria {
+    text-align: center;
+}
+
+.categorias .categoria img {
+    width: 100px; /* Ajusta el tamaño de los iconos */
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.categorias .categoria h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .redes-sociales p {
+    margin-right: 10px;
+}
+
+footer .redes-sociales a img {
+    width: 30px;
+    height: auto;
+    margin: 0 10px;
+}
+.nombre{
+    font-size: 60px;
+}
+.slogan{
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 0 20px;
+ 
+    
+    
+
+}
+
+body header li a{
+    
+}
+    </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo K&S STL">
+    </div>
+    <div class="logo">
+        <h1 class="nombre"style="font-size:60px">K&S STYLE</h1>
+        <p class="slogan">Elegancia que inspira, estilo que transciende</p>
+    </div>
+        <nav>
+            <ul>
+                <li><a href="ayuda..html">AYUDA</a></li>
+            </ul>
+        </nav>
+    </header>
+</header>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&S STYLE - Efecto de Escritura</title>
+    <style>
+        /* Estilo base para el texto animado */
+          .typing-effect {
+         
+            position: absolute;
+    position: relative; /* o position: static; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px; /* tamaño de letra */
+    line-height: 1.5;
+    color: #0a0a0a;
+    overflow: auto;
+    z-index:1000; /* Ya no necesita ser alto */
+    width: 90vw; /* alto del coontenedor*/
+    height: auto; /* ancho del contenedor */
+    margin: 20px auto; /* Ejemplo de margen para centrarlo */
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+.galeria-principal{
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+.galeria-principal .contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    
+}
+.op-galeria{
+    display:grid;/* espacio entre las imagenes*/
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 15px;
+     transition: background-color 0.3s;
+     animation: fadeIn 2s ease-in-out;
+    
+    
+}
+.op-galeria img{
+    display: block;
+    width: 100%;/* espacio horizontal entre las imagenes */
+height: auto;
+border-radius: 15px;
+box-shadow: 0 20px 5px rgba(0, 0, 0,0.1);
+}
+        /* Ocultar el texto original */
+        .typing-text {
+            visibility: hidden;
+        }
+        
+        /* Contenedor del texto que se escribe */
+        .typing-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+
+        }
+        
+        /* Estilo para cada línea */
+        .typing-line {
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: "georgia", serif;
+            font-style: italic;
+            margin: 0;
+            line-height: inherit;
+            animation: fadeIn 0.1s ease-out; /* Nueva animación para suavizar */
+        }
+        
+        /* Cursor parpadeante */
+  
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body .typing-effect p{
+            text-align: center;
+        }
+        .principal{
+            align-items: last baseline;
+            height: 10px;
+            width: 10px;
+            align-content: initial;
+        }
+    </style>
+</head
+>
+
+<body>
+ <div class="typing-effect con-imagen">
+    <div class="typing-text">
+        <p>K&S Style nació en 2025</p>
+        <p>en el corazón vibrante de la Ciudad de México, con una visión clara</p>
+        <p>crear una marca que fusionara la fuerza del street style con la libertad</p>
+        <p>:   creativa del maquillaje. Todo comenzó con una pasión por la moda urbana, </p>
+        <p>por los colores que gritan identidad, por las texturas que cuentan historias,</p>
+        <p> y por la necesidad de expresarse sin filtros.</p>
+    </div>
+    <section class="galeria-principal">
+        <div class="contenedor">
+            <div class="op-galeria">
+                <img src="imagenes/pri1.jpg"alt="imagen1">
+                <img src="imagenes/pri2.jpg"alt="imagen2">
+                <img src="imagenes/pri3.jpg"alt="imagen3">
+            </div>
+        </div>
+    </section>
+ 
+    <div class="typing-container" id="typing-output"></div>
+</div>
+       
+        
+        
+        <!-- Aquí se insertará el texto animado -->
+        <div class="typing-container" id="typing-output"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingText = document.querySelector('.typing-text');
+            const typingOutput = document.getElementById('typing-output');
+            const lines = Array.from(typingText.querySelectorAll('p')).map(p => p.textContent);
+            
+            let lineIndex = 0;
+            let charIndex = 0;
+            let currentLineElement = null;
+            
+            function typeWriter() {
+                if (lineIndex >= lines.length) return;
+                
+                // Crear elemento para la nueva línea si no existe
+                if (!currentLineElement) {
+                    currentLineElement = document.createElement('div');
+                    currentLineElement.className = 'typing-line';
+                    typingOutput.appendChild(currentLineElement);
+                }
+                
+                // Si todavía hay caracteres por escribir en la línea actual
+                if (charIndex < lines[lineIndex].length) {
+                    currentLineElement.textContent = lines[lineIndex].substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeWriter, 20); // REDUCIDO de 100ms a 50ms (más rápido)
+                } 
+                // Pasar a la siguiente línea
+                else {
+                    // Añadir cursor al final de la línea
+                    const cursor = document.createElement('span');
+                    cursor.className = 'typing-cursor';
+                    currentLineElement.appendChild(cursor);
+                    
+                    // Resetear para la siguiente línea
+                    lineIndex++;
+                    charIndex = 0;
+                    currentLineElement = null;
+                    
+                    // Pequeña pausa entre líneas REDUCIDA
+                    setTimeout(typeWriter, 100); // REDUCIDO de 200ms a 100ms
+                }
+            }
+            
+            // Iniciar la animación con menos retardo
+            setTimeout(typeWriter, 100); // REDUCIDO de 500ms a 200ms
+        });
+    </script>
+        <!-- Hero section -->
+        
+    
+    <!-- Sección de características -->
+   <section class="features">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div>
+                    <a href="maquillaje.html" class="iconos">💄
+                        <h3>MAQUILLAJE</h3>
+                        <p>Todo lo que tu necesitas</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div>
+                    <a href="ropa.html" class="iconos">👗
+                        <h3>ROPA</h3>
+                        <p>el tipo de ropa que tu necesitas</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <a href="accesorios.html">
+                    <div class="feature-icon">👓</div>
+                    <h3>ACCESORIOS</h3>
+                    <p>Gama de accesorios de moda.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <a href="index.html" class="footer-logo">S&T STYLE</a>
+            <ul class="footer-links">
+                <li><a href="index.html">PRODUCTOS</a></li>
+                <li><a href="ayuda..html">AYUDA</a></li>
+                <li><a href="https://www.facebook.com/share/18e5FKexXc/?mibextid=wwXIfr">FACEBOOK</a></li>
+                <li><a href="https://www.instagram.com/k_s_style.oficial?igsh=MXI2NnVna2t2bmVkeA%3D%3D&utm_source=qr">INSTAGRAM</a></li>
+            </ul>
+            <p class="copyright">© 2025 K&S Style no es solo moda. Es un estilo de vida..</p>
+        </div>
+    </footer>
+</body>
+</html>
